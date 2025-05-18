@@ -1,20 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pingory</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-  <div class="chat-container">
-    <header class="chat-header">Pingory Messenger</header>
-    <div class="chat-box" id="chatBox"></div>
-    <div class="chat-input">
-      <input type="text" id="userInput" placeholder="Type a any..." />
-      <button onclick="sendMessage()"><b>SENDi</b></button>
-    </div>
-  </div>
-  <script src="assets/js/app.js"></script>
-</body>
-</html>
+ 1 <!DOCTYPE html>
+ 2 <html lang="en">
+ 3 <head>
+ 4     <meta charset="UTF-8" />
+ 5     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 6     <title>Chats - ProChat</title>
+ 7     <link rel="stylesheet" href="assets/css/style.css" />
+ 8     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+ 9     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+10 </head>
+11 <body>
+12     <div class="container">
+13         <header class="header">
+14             <button class="hamburger" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+15             <h1>Chats</h1>
+16             <a href="profile.html" class="profile-link"><i class="fas fa-user"></i> Profile</a>
+17         </header>
+18
+19         <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+20         <aside class="sidebar" id="sidebar">
+21             <div class="profile-section">
+22                 <div class="avatar-container">
+23                     <img src="assets/images/default-avatar.png" alt="Avatar" class="profile-pic" id="sidebarAvatar">
+24                     <span id="sidebarStatus" class="status-dot online"></span>
+25                 </div>
+26                 <span class="profile-name" id="sidebarName">Amit Kumar</span>
+27             </div>
+28             <div class="theme-selector">
+29                 <h3>Theme</h3>
+30                 <select id="themeSelect" onchange="changeTheme()">
+31                     <option value="default">Default</option>
+32                     <option value="dark">Dark</option>
+33                     <option value="light">Light</option>
+34                 </select>
+35             </div>
+36             <nav>
+37                 <ul>
+38                     <li><a href="#" class="active">Chats</a></li>
+39                     <li><a href="profile.html">Profile</a></li>
+40                     <li><a href="#" onclick="logout()">Logout</a></li>
+41                 </ul>
+42             </nav>
+43         </aside>
+44
+45         <main class="chat-container">
+46             <div class="search-bar">
+47                 <i class="fas fa-search"></i>
+48                 <input type="text" id="searchInput" placeholder="Search chats..." oninput="filterChats()" />
+49             </div>
+50             <div class="chat-list" id="chatList">
+51                 <!-- Sample chats populated by JS -->
+52             </div>
+53         </main>
+54     </div>
+55
+56     <script src="assets/js/main.js"></script>
+57 </body>
+58 </html>
+59
