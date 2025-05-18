@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pingory Messenger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pingory</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <div class="app">
-    <header>Pingory</header>
-    <div class="chat-window" id="chatWindow">
-      <div class="message bot">Hello! Welcome to Pingory.</div>
-    </div>
-    <div class="input-area">
+  <div class="chat-container">
+    <header class="chat-header">Pingory Messenger</header>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-input">
       <input type="text" id="userInput" placeholder="Type a message..." />
       <button onclick="sendMessage()">Send</button>
     </div>
